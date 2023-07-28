@@ -1,0 +1,199 @@
+﻿@using System.Text.RegularExpressions
+@using NSS.Website.Models;
+@{ 
+    List<category> categories = ViewBag.Categorie;
+    string brand = ViewBag.Brand; 
+}
+
+<main>
+    <div class="page_header element_to_stick">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7 col-md-7 d-none d-md-block">
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Trang chủ</a></li>
+                            <li><a href="/ma-giam-gia">Mã giảm giá</a></li>
+                            <li>@brand</li>
+                        </ul>
+                    </div>
+                    <h1 id="txtCount">Mã giảm giá <b>@brand</b>, coupon, khuyến mãi tháng @DateTime.Now.ToString("MM/yyyy")</h1>
+                </div>
+                @Html.Partial("~/Views/Search/Index.cshtml")
+            </div>
+            <!-- /row -->
+        </div>
+    </div>
+    <div class="bg-gray">
+        <div class="container margin_30_40" style="transform: none;">
+            <div class="row " style="transform: none;">
+                <aside class="col-lg-3" id="sidebar_fixed" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+
+                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; top: 0px; left: 387.6px;">
+                        <div class="clearfix">
+                            <div class="sort_select">
+                                <select name="sort" id="sort">
+                                    <option value="popularity" selected="selected">Sort by Popularity</option>
+                                    <option value="rating">Sort by Average rating</option>
+                                    <option value="date">Sort by newness</option>
+                                    <option value="price">Sort by Price: low to high</option>
+                                    <option value="price-desc">Sort by Price: high to low</option>
+                                </select>
+                            </div>
+                            <a href="javascript:void(0)" class="open_filters btn_filters"><i class="icon_adjust-vert"></i><span>Filters</span></a>
+                        </div>
+
+                        <div class="filter_col">
+                            <div class="inner_bt">
+                                <a href="javascript:void(0)" class="open_filters"><i class="icon_close"></i></a>
+                            </div>
+                            <div class="filter_type">
+                                <h4><a href="#filter_1" data-bs-toggle="collapse" class="opened">Hạn sử dụng</a></h4>
+                                <div class="collapse show" id="filter_1">
+                                    <ul>
+                                        <li>
+                                            <label class="container_check">
+                                                Tất cả @*<small>12</small>*@
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="container_check">
+                                                Dưới 1 tuần @*<small>12</small>*@
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="container_check">
+                                                1 tháng @*<small>12</small>*@
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+
+                                        <li>
+                                            <label class="container_check">
+                                                3 tháng @*<small>12</small>*@
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /filter_type -->
+                            </div>
+                            @if (categories != null && categories.Count > 0)
+                            {
+                                <div class="filter_type">
+                                    <h4><a href="#filter_2" data-bs-toggle="collapse" class="opened">Danh mục</a></h4>
+                                    <div class="collapse show" id="filter_2">
+                                        <ul>
+
+                                            @foreach (var item in categories)
+                                            {
+                                                <li>
+                                                    <label class="container_check">
+                                                        @item.category_name_show @*<small>12</small>*@
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                    <!-- /filter_type -->
+                                </div>
+                            }
+                            <div class="filter_type">
+                                <h4><a href="#filter_1" data-bs-toggle="collapse" class="opened">Loại Coupon</a></h4>
+                                <div class="collapse show" id="filter_1">
+                                    <ul>
+                                        <li>
+                                            <label class="container_check">
+                                                Free ship @*<small>12</small>*@
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="container_check">
+                                                Giảm theo phần trăm @*<small>12</small>*@
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="container_check">
+                                                Giảm theo số tiền @*<small>12</small>*@
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /filter_type -->
+                            </div>
+                            <div class="buttons">
+                                <a href="javascript:void(0)" class="btn_1 full-width">Filter</a>
+                            </div>
+                        </div>
+
+                        <div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 330px; height: 1088px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div>
+                    </div>
+                </aside>
+
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="main_title version_2">
+                                <span><em></em></span>
+                                <h2>Mã giảm giá </h2>
+                                <p> <small>Cập nhật liên tục</small>.</p>
+                                <a href="/">View All</a>
+                            </div>
+                        </div>
+                        <div id="category-copupon">
+
+                        </div>
+                        @*@if (Coupons_list != null && Coupons_list.data != null && Coupons_list.data.Count > 0)
+                            {
+                                @Html.Partial("~/Views/Shared/Partial/_Coupons.cshtml", Coupons_list)
+                            }*@
+                        <!-- /strip grid -->
+                    </div>
+                    <!-- /row -->
+                    <div class="pagination_fg">
+                        <a href="#">«</a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">»</a>
+                    </div>
+                </div>
+                <!-- /col -->
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- /container -->
+
+</main>
+
+
+@section Scripts {
+    <style>
+        .bg-gray {
+            background: #f4f4f4;
+        }
+    </style>
+    <script src="~/Content/js/category.js"></script>
+    <!-- SPECIFIC CSS -->
+    <link href="~/Content/UI/css/listing.css" rel="stylesheet" />
+}
+

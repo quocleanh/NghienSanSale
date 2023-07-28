@@ -1,0 +1,57 @@
+﻿@using System.Text.RegularExpressions
+@using NSS.Website.Models;
+@using System.Globalization;
+@using System.Security.Claims;
+@model IEnumerable<category>
+
+@if (Model != null && Model.Count() > 0)
+{
+    <div class="bg_gray">
+
+        <div class="container margin_10_30">
+            <div class="main_title">
+                <span><em></em></span>
+                <h2>
+                    Tìm mã theo Ngành hàng
+                </h2>
+                <p>@*Cum doctus civibus efficiantur in imperdiet deterruisset.*@</p>
+                <a href="/">Xem tất cả</a>
+            </div>
+            <div class="owl-carousel owl-theme categories_carousel">
+                @foreach (var item in Model)
+                {
+                    <div class="item">
+                        <a href="/ma-giam-gia/@item.slug">
+                            @*<span>98</span>*@
+                            @Html.Raw(item.image)
+                            <h3>@item.category_name_show</h3>
+                            @*<small>Avg price $40</small>*@
+                        </a>
+                    </div>
+                }
+            </div>
+            <!-- /carousel
+            <div class="banner lazy" data-bg="url(https://s3.ap-southeast-1.amazonaws.com/adpia.vn/util/multi/20221208/Affiliate_Banner_%281%29_AFF5.jpg)">
+                <div class="wrapper d-flex align-items-center opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.2)">
+                    <a href="https://click.adpia.vn/tracking.php?m=tiki&a=A100091693&u_id=&l=5555" class=""></a>
+                </div>
+            </div> -->
+			
+			<iframe style='border:none; min-width: 100%' src='https://smartlink.adpia.vn/adpia-ads.php?width=1080&height=357&cate=A&m_id=tiki&a_id=A100091693&u_id=' height='357' width='1080'></iframe><script>window.addEventListener('load', function (event) { if(document.getElementsByTagName('iframe')[0].offsetWidth < document.getElementsByTagName('iframe')[0].width) { document.getElementsByTagName('iframe')[0].style.height = (document.getElementsByTagName('iframe')[0].height * document.getElementsByTagName('iframe')[0].offsetWidth / document.getElementsByTagName('iframe')[0].width) + 'px' } })</script>
+			
+			<!-- /banner -->
+            @*<div class="col-12">
+                <div class="main_title version_2">
+                    <span><em></em></span>
+                    <h2>Mã giảm giá HOT</h2>
+                    <p> <small>Cập nhật liên tục</small>.</p>
+                    <a href="/">View All</a>
+                </div>
+            </div>*@
+            <div class="row" id="home-copupon">
+                Đang tải...
+            </div> 
+        </div>
+    </div>
+    
+}

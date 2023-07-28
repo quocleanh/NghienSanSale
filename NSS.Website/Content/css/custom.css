@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap');
+
+.hero_single.version_2 {
+    height: 580px;
+    background: #ededed url(~/Content/UI//img/home_section_1.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+main {
+    overflow-x: hidden !important;
+}
+
+.hero_single.jarallax {
+    height: 420px;
+}
+
+.coupon-code {
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 600;
+    height: auto !important;
+    line-height: 45px;
+    text-align: left;
+    color: #121212;
+    padding-right: 15px;
+    background-color: #f3f6f9;
+    width: 220px;
+}
+
+.show-code {
+    /* background: repeating-linear-gradient( 45deg,transparent,transparent 10px,#ddd 10px,#ddd 20px),linear-gradient( to bottom,#ddd,#ddd); */
+    /* background: repeating-linear-gradient( 45deg,transparent,transparent 10px,#ffc107 10px,#ffc107 20px),linear-gradient( to bottom,#f1b503,#f1b503); */
+    box-shadow: none;
+    display: block;
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: 600;
+    height: auto !important;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #589442;
+    width: 120px;
+    position: absolute;
+    right: 34px;
+    bottom: 11px;
+    border-radius: 5px;
+}
+
+    .show-code:hover {
+        width: 158px;
+        transition: width 1s, height 4s;
+    }
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.fl-left {
+    float: left;
+    /*margin-right: 1%;*/
+}
+
+.fl-right {
+    float: right;
+    /*margin-left: 1%;*/
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    border-left: 10px solid #fec500;
+    padding-left: 10px;
+    margin-bottom: 30px
+}
+
+.card {
+    display: table-row;
+    background: #f4f4f4;
+    color: #989898;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    border-radius: 4px;
+    position: relative;
+}
+
+.date {
+    display: table-cell;
+    width: 25%;
+    position: relative;
+    text-align: center;
+    border-right: 2px dashed #dadde6;
+    background: #fff;
+}
+
+    .date:before, .date:after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: #f4f4f4;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        z-index: 1;
+        border-radius: 50%;
+    }
+
+    .date:after {
+        top: auto;
+        bottom: -15px
+    }
+
+    .date img {
+        width: 100%;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 20px;
+    }
+
+    .date time {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%)
+    }
+
+.even-date.coupon-meta {
+    display: -webkit-inline-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: inherit;
+    text-overflow: ellipsis;
+    /* margin: auto; */
+}
+
+.date time span {
+    display: block
+}
+
+    .date time span:first-child {
+        color: #2b2b2b;
+        font-weight: 600;
+        font-size: 250%
+    }
+
+    .date time span:last-child {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top: -10px
+    }
+
+.card-cont {
+    display: table-cell;
+    width: 75%;
+    font-size: 85%;
+    padding: 10px 10px 50px 50px;
+    background: #fff;
+    position: relative;
+}
+
+    .card-cont .coupon_code {
+        text-decoration: none;
+        position: absolute;
+        right: 35px;
+        bottom: 10px;
+        border-radius: 0;
+        box-shadow: none;
+        display: table-column;
+        overflow: hidden;
+        font-size: 10px;
+        font-weight: 600;
+        height: auto !important;
+        line-height: 33px;
+        text-align: left;
+        color: #121212;
+        padding-left: 15px;
+        background-color: #f3f6f9;
+        width: 185px;
+        display: -webkit-inline-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: inherit;
+        text-overflow: ellipsis;
+        border-radius: 10%;
+        filter: blur(8px);
+        -webkit-filter: blur(2px);
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .card-cont h3 {
+        color: #3C3C3C;
+        font-size: 130%;
+        min-height: 2.5em;
+        display: table-cell;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: inherit;
+        text-overflow: ellipsis;
+        display: -webkit-inline-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: inherit;
+        text-overflow: ellipsis;
+    }
+
+    .card-cont > div {
+        display: table-row
+    }
+
+    .card-cont .even-date i,
+    .card-cont .even-info i,
+    .card-cont .even-date time,
+    .card-cont .even-info p {
+        display: table-cell
+    }
+
+    .card-cont .even-date i,
+    .card-cont .even-info i {
+        padding: 5% 5% 0 0
+    }
+
+    .card-cont .even-info p {
+        padding: 30px 50px 0 0
+    }
+
+    .card-cont .even-date time span {
+        display: block
+    }
+/*.row:last-child .card:first-child .card-cont a {
+    background-color: #037FDD
+}*/
+/*.row:last-child .card:last-child .card-cont a {
+    background-color: #F8504C
+}*/
+
+.filter_type h4 a.opened {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+@media screen and (max-width: 860px) {
+    .card {
+        display: block;
+        float: none;
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+        .card + .card {
+            margin-left: 0
+        }
+
+    .card-cont .even-date,
+    .card-cont .even-info {
+        font-size: 75%
+    }
+}
+
+img.logo_normal.hide {
+    display: none;
+}
+
+.owl-theme.categories_carousel .item a h3 {
+    font-size: 18px;
+    font-size: 1em;
+    margin: 0;
+    display: -webkit-inline-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: inherit;
+    text-overflow: ellipsis;
+}
+
+.owl-theme.categories_carousel .item a i {
+    font-size: 70px;
+    font-size: 3.375rem;
+    margin: 0;
+    padding: 17px;
+    display: block;
+}
+
+.page_header {
+    padding: 20px 0 20px 0;
+    background-color: #3a3a3a;
+    color: #fff !important;
+}
+
+    .page_header * {
+        color: #fff;
+    }
+
+.breadcrumbs ul li a {
+    color: #fff;
+}
+
+footer .contacts ul li {
+    padding-left: 0;
+    position: relative;
+    margin-bottom: 15px;
+    color: #fff;
+    opacity: .6;
+}
+
+span.time-left {
+    display: inline-block;
+    position: absolute;
+    left: 54px;
+    bottom: 19px;
+    font-size: 10px;
+    text-transform: capitalize;
+}
+
+.card-cont .coupon_code.active {
+    -webkit-filter: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: dotted 4px #ffc107;
+    border-radius: 18px;
+}
+
+section.card-cont small {
+    display: block;
+}
+
+@media (max-width: 991px) {
+    .custom-search-input input[type=submit] {
+        margin: 0 0 0 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        border-radius: 3px;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    /* styles for browsers larger than 960px; */
+}
+
+@media only screen and (min-width: 1440px) {
+    /* styles for browsers larger than 1440px; */
+}
+
+@media only screen and (min-width: 2000px) {
+    /* for sumo sized (mac) screens */
+}
+
+@media only screen and (max-device-width: 480px) {
+    /* styles for mobile browsers smaller than 480px; (iPhone) */
+}
+
+@media only screen and (device-width: 768px) {
+    .hero_single .opacity-mask h1, .hero_single .opacity-mask h3 {
+        color: #fff;
+        line-height: 1;
+        font-size: 48px;
+        font-size: 2rem;
+        margin: 0;
+        font-weight: 500;
+    }
+
+    .hero_single .opacity-mask p {
+        font-size: 28px;
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+}

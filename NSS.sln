@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSS.Website", "NSS.Website\NSS.Website.csproj", "{40A50A63-6CE0-4208-91A0-94837ECFB34F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSS.CMS", "NSS.CMS\NSS.CMS.csproj", "{9570E0C3-0C28-4C31-96CE-7C654CF3D1DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40A50A63-6CE0-4208-91A0-94837ECFB34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A50A63-6CE0-4208-91A0-94837ECFB34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A50A63-6CE0-4208-91A0-94837ECFB34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A50A63-6CE0-4208-91A0-94837ECFB34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9570E0C3-0C28-4C31-96CE-7C654CF3D1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9570E0C3-0C28-4C31-96CE-7C654CF3D1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9570E0C3-0C28-4C31-96CE-7C654CF3D1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9570E0C3-0C28-4C31-96CE-7C654CF3D1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36A07807-F11B-4A55-B70A-BD4A597A70FC}
+	EndGlobalSection
+EndGlobal

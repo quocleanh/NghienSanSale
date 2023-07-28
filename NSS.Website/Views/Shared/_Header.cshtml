@@ -1,0 +1,52 @@
+﻿
+<header class=" @(ViewBag.IsHome == "1" ? "header clearfix element_to_stick":"header_in clearfix")">
+    <div class="container">
+        <div id="logo">
+            <a href="/">
+                <img src="~/Content/images/logo-white.png" height="50" alt="" class="logo_normal @(ViewBag.IsHome == "1" ? "":"hide")">
+                <img src="~/Content/images/logo-black.png" height="50" alt="" class="logo_sticky">
+            </a>
+        </div>
+        <a href="javascript:void(0)" class="open_close">
+            <i class="icon_menu"></i><span>Menu</span>
+        </a>
+        <nav class="main-menu">
+            <div id="header_menu">
+                <a href="/" class="open_close">
+                    <i class="icon_close"></i><span>Menu</span>
+                </a>
+                <a href="/"><img src="~/Content/images/logo-white.png" width="auto" height="40" alt=""></a>
+            </div>
+            <ul>
+                <li class="submenu">
+                    <a href="/" class="">Trang chủ</a>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" class="show-submenu">Khuyến mãi theo thương hiệu</a>
+                    <ul>
+                        <li><a href="/ma-giam-gia/Shopee">Shopee</a></li>
+                        <li><a href="/ma-giam-gia/Lazada">Lazada</a></li>
+                        <li><a href="/ma-giam-gia/Tiki">Tiki</a></li>
+                        <li><a href="/ma-giam-gia/Sendo">Sendo</a></li>
+                        <li><a href="/ma-giam-gia/Fahasa">Fahasa</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" class="show-submenu">Khuyến mãi theo ngành hàng</a>
+                    <ul>
+                        <li><a href="/ma-giam-gia/am-thuc">Ẩm thực</a></li>
+                        <li><a href="/ma-giam-gia/dien-tu-cong-nghe">Điện tử & Công nghệ</a></li>
+                        <li><a href="/ma-giam-gia/dien-tu-gia-dung">Điện tử gia dụng</a></li>
+                        <li><a href="/ma-giam-gia/gia-dung-noi-that">Gia dụng & Nội thất</a></li>
+                        <li><a href="/ma-giam-gia/tap-hoa">Tạp hóa</a></li>
+                        <li><a href="/ma-giam-gia/me-and-be">Mẹ & Bé</a></li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/blog-khuyen-mai" class="show-submenu">Blog khuyến mãi</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+

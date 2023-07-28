@@ -1,0 +1,97 @@
+﻿@using System.Text.RegularExpressions
+@using NSS.Website.Models;
+@{
+    Product product = ViewBag.Product;
+    if (product == null)
+    {
+        product = new Product();
+    }
+}
+<main>
+    <div class="page_header element_to_stick">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7 col-md-7 d-none d-md-block">
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Trang chủ</a></li>
+                            <li><a href="#">Tìm mã giảm giá</a></li>
+                        </ul>
+                    </div>
+                    <h1>@ViewBag.ProductName</h1>
+                </div>
+
+                @Html.Partial("~/Views/Search/Index.cshtml")
+            </div>
+            <!-- /row -->
+        </div>
+    </div>
+    <!-- /page_header -->
+    <div class="bg_gray">
+        <div class="container margin_30_40">
+            <div class="col-12">
+                @if (product != null)
+                {
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <div class="product-card bg-white mb-4 overflow-hidden d-lg-flex rounded-lg position-relative">
+                                <div class="product-image overflow-hidden d-flex align-items-center m-4">
+                                    <img src="@product.Image" alt="" class="product-thumbnail rounded-lg">
+                                </div>
+                                <div class="py-4 pr-4 pl-4 pl-lg-0 product-details">
+                                    <h4 class="font-weight-bold d-flex justify-content-between">
+                                        <a href="https://go.isclix.com/deep_link/5744706704859499028?url=@product.Link" class="text-dark" title="Elegant designed coffee plant for desktop decoration">
+                                            @product.ProductName
+                                        </a>
+                                    </h4>
+                                    <a href="https://go.isclix.com/deep_link/5744706704859499028?url=@product.Link" class="text-uppercase py-0 px-2 rounded-lg border mb-2 d-inline-block">
+                                        <small class="font-weight-bold">@product.Merchant </small>
+                                    </a>
+
+                                    <div class="d-flex align-items-baseline mb-2">
+                                        <h2 class="mr-2">@product.PriceDiscount</h2>
+                                        <h5 class="text-striked text-muted mr-3 font-weight-regular">@product.Price</h5>
+                                        @*<h5 class="text-success">42% off</h5>*@
+                                    </div> 
+                                    <ul class="text-muted pl-3">
+                                        <li>Giá sản phẩm chỉ mang tinh chất tham khảo tại thời điểm hiện tại. </li>
+                                        <li><a href="https://go.isclix.com/deep_link/5744706704859499028?url=@product.Link">Xem trực tiếp sản phẩm</a>.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="row isotope-wrapper" id="search-copupon" style="position: relative">
+                    <div class="row text-center" id="loading">
+                        <div class="lds-ripple"><div></div><div></div></div>
+                        <p>Đang lấy dữ liệu mới nhất, bạn chờ tý nhé ^^</p>
+                    </div>
+                    @Html.Partial("~/Views/Shared/Partial/_Coupons.cshtml")
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+</main>
+@section Scripts {
+    <script src="~/Content/js/search.js"></script>
+    <style>
+        img.product-thumbnail.rounded-lg {
+            width: 100%;
+            max-width: 140px;
+        }
+
+        h2.mr-2 {
+            padding: 0 15px;
+        }
+        a.text-dark {
+            padding: 0 15px;
+        }
+        h5.text-striked.text-muted.mr-3.font-weight-regular {
+            text-decoration: line-through;
+            color: #dc3545 !important;
+        }
+    </style>
+}

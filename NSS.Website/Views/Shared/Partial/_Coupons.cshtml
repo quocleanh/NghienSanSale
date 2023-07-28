@@ -1,0 +1,178 @@
+﻿@using System.Text.RegularExpressions
+@using NSS.Website.Models;
+@{
+    string pattern = @"((Mã|mã)+[ 0-9A-Za-z])\w+";
+    Uri myUri = Request.Url;
+    bool isSearch = ViewBag.IsSearch | false;
+    string strURL = HttpUtility.ParseQueryString(myUri.Query).Get("url");
+    string deep_link = "https://go.isclix.com/deep_link/5744706704859499028?url=" + strURL + "&utm_source=website&utm_medium=tim-ma-giam-gia&utm_content=" + ViewBag.ProductName;
+    merchant_list merchant_list = ViewBag.merchant_list;
+    Coupons Coupons_list = ViewBag.Coupons;
+    string domain = Request.IsLocal ? "https://nghiensansale.vn/" : "https://nghiensansale.vn/";
+    int x = 0;
+
+    List<Coupon> listBrand = (Coupons_list != null && Coupons_list.data != null && Coupons_list.data.Count > 0) ? Coupons_list.data.Where(z => z.domain == null || z.domain == "").ToList() : new List<Coupon>();
+    List<Coupon> listEcom_Exc = (Coupons_list != null && Coupons_list.data != null && Coupons_list.data.Count > 0) ? Coupons_list.data.Where(z => z.domain != null && z.domain != "").ToList() : new List<Coupon>();
+    Int64 totalPage = (Coupons_list != null && Coupons_list.count > 0)
+                                ? (Coupons_list.count + 19) / 20 : 0;
+}
+@if (Coupons_list != null && Coupons_list.data != null && Coupons_list.data.Count > 0)
+{
+    <div class="col-12">
+        <div class="main_title version_2">
+            <span><em></em></span>
+            <h2>Mã giảm giá </h2>
+            <p> @Coupons_list.count mã,<small>Cập nhật liên tục</small></p>
+            <a href="/ma-giam-gia">View All</a>
+        </div>
+    </div>
+    <input type="hidden" id="totalPage" value="@totalPage" />
+    <div class="col-12">
+        <div class="">
+            @if (listBrand != null && listBrand.Count > 0)
+            {
+                <div class=" row">
+                    @foreach (var item in listBrand)
+                    {
+                        x++;
+                        string href = isSearch ? deep_link : item.aff_link;
+                        string cont = Regex.Replace(item.content, pattern, "xxxxx");
+                        string title = Regex.Replace(item.name, pattern, "xxxxx");
+                        Coupon_Item coup = item.coupons.FirstOrDefault();
+                        string code = item.coupons.FirstOrDefault().coupon_code;
+                        string img = "~/Content/uploads/brand/[mechant].png";
+                        if (!string.IsNullOrEmpty(item.domain))
+                        {
+                            if (item.domain.ToString() == "shopee.vn")
+                            {
+                                img = domain + "Content/uploads/brand/shopee.png";
+                            }
+                            else if (item.domain.ToString() == "lazada.vn")
+                            {
+                                img = domain + "Content/uploads/brand/lazada.png";
+                            }
+                            else if (item.domain.ToString() == "tiki.vn")
+                            {
+                                img = domain + "Content/uploads/brand/tiki.png";
+                            }
+                            else if (item.domain.ToString() == "fahasa.com")
+                            {
+                                img = domain + "Content/uploads/brand/fahasa.png";
+                            }
+                        }
+                        else
+                        {
+                            img = item.image;
+                        }
+                        <article class="col-md-6 card fl-@((x % 2 == 1) ? "left" : "right")">
+                            <section class="date">
+                                <img src="@img" alt="" class="lazy">
+                            </section>
+                            <section class="card-cont">
+                                <small>@item.domain</small>
+                                <h3>
+                                    <a href="@item.aff_link" target="_blank">
+                                        @item.name
+                                    </a>
+                                </h3>
+                                <div class="even-date coupon-meta">
+                                    @Html.Raw(cont)
+                                </div>
+                                <span class="time-left">@item.time_left</span>
+                                <a href="@item.aff_link" id="cpc-@item.id" class="coupon_code" target="_blank">@item.coupons.FirstOrDefault().coupon_code</a>
+                                <span class="show-code" id="@item.id" data-id="@item.id" data-code="@item.coupons.FirstOrDefault().coupon_code" data-ex-link="@item.aff_link" id="@item.coupons.FirstOrDefault().coupon_code">Copy Code</span>
+                            </section>
+                        </article>
+                    }
+                </div>
+            }
+            @if (isSearch)
+            {
+                if (strURL.Contains("shopee.vn"))
+                {
+                    <div class=" row">
+                        <iframe style='border:none; max-width: 100%;; margin: 15px 0 25px 0;' src='https://smartlink.adpia.vn/adpia-ads.php?width=1280&height=320&cate=A&m_id=shopee&a_id=A100091693&u_id=' height='320' width='1280'></iframe>
+                        <script>window.addEventListener('load', function (event) { if (document.getElementsByTagName('iframe')[0].offsetWidth < document.getElementsByTagName('iframe')[0].width) { document.getElementsByTagName('iframe')[0].style.height = (document.getElementsByTagName('iframe')[0].height * document.getElementsByTagName('iframe')[0].offsetWidth / document.getElementsByTagName('iframe')[0].width) + 'px' } })</script>
+                    </div>
+
+                }
+                else if (strURL.Contains("tiki.vn"))
+                {
+                    <div class=" row">
+						<iframe style='border:none; max-width: 100%; margin: 15px 0 25px 0;' src='https://smartlink.adpia.vn/adpia-ads.php?width=1240&height=413&cate=A&m_id=tiki&a_id=A100091693&u_id=' height='413' width='1240'></iframe>
+						<script>window.addEventListener('load', function (event) { if(document.getElementsByTagName('iframe')[0].offsetWidth < document.getElementsByTagName('iframe')[0].width) { document.getElementsByTagName('iframe')[0].style.height = (document.getElementsByTagName('iframe')[0].height * document.getElementsByTagName('iframe')[0].offsetWidth / document.getElementsByTagName('iframe')[0].width) + 'px' } })</script>
+						
+					</div>
+                }
+
+
+            }
+            @if (listEcom_Exc != null && listEcom_Exc.Count > 0)
+            {
+                <div class=" row">
+                    @foreach (var item in listEcom_Exc)
+                    {
+                        x++;
+                        string href = isSearch ? deep_link : item.aff_link;
+                        string cont = Regex.Replace(item.content, pattern, "xxxxx");
+                        string title = Regex.Replace(item.name, pattern, "xxxxx");
+                        Coupon_Item coup = item.coupons.FirstOrDefault();
+                        string code = item.coupons.FirstOrDefault().coupon_code;
+                        string img = "~/Content/uploads/brand/[mechant].png";
+                        if (!string.IsNullOrEmpty(item.domain))
+                        {
+                            if (item.domain.ToString() == "shopee.vn")
+                            {
+                                img = domain + "Content/uploads/brand/shopee.png";
+                            }
+                            else if (item.domain.ToString() == "lazada.vn")
+                            {
+                                img = domain + "Content/uploads/brand/lazada.png";
+                            }
+                            else if (item.domain.ToString() == "tiki.vn")
+                            {
+                                img = domain + "Content/uploads/brand/tiki.png";
+                            }
+                            else if (item.domain.ToString() == "fahasa.com")
+                            {
+                                img = domain + "Content/uploads/brand/fahasa.png";
+                            }
+                        }
+                        else
+                        {
+                            img = item.image;
+                        }
+                        <article class="col-md-6 card fl-@((x % 2 == 1) ? "left" : "right")">
+                            <section class="date">
+                                <img src="@img" alt="" class="lazy">
+                            </section>
+                            <section class="card-cont">
+                                <small>@item.domain</small>
+                                <h3>
+                                    <a href="@item.aff_link" target="_blank">
+                                        @item.name
+                                    </a>
+                                </h3>
+                                <div class="even-date coupon-meta">
+                                    @Html.Raw(cont)
+                                </div>
+                                <span class="time-left">@item.time_left</span>
+                                <a href="@item.aff_link" id="cpc-@item.id" class="coupon_code" target="_blank">@item.coupons.FirstOrDefault().coupon_code</a>
+                                <span class="show-code" id="@item.id" data-id="@item.id" data-code="@item.coupons.FirstOrDefault().coupon_code" data-ex-link="@item.aff_link" id="@item.coupons.FirstOrDefault().coupon_code">Copy Code</span>
+                            </section>
+                        </article>
+                    }
+                </div>
+
+            }
+        </div>
+    </div>
+}
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+         
+        });
+        
+    </script>
+}

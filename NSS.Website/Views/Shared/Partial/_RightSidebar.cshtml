@@ -1,0 +1,39 @@
+﻿@using System.Text.RegularExpressions
+@using NSS.Website.Models;
+@{ 
+    merchant_list merchant_list = ViewBag.merchant_list;
+}
+<div class="sidebar col-md-4 col-sm-12">
+    <div class="widget clearfix">
+        <div class="featured hidden-xs"><i class="fa fa-star-o"></i></div>
+        <div class="widget-title">
+            <h4><span>Thương hiệu nổi bật</span></h4>
+        </div> 
+        <div class="text-center store-list row">
+            @if (merchant_list != null && merchant_list.data != null && merchant_list.data.Count > 0)
+            {
+                foreach (var item in merchant_list.data)
+                {
+                    <div class="col-md-6 col-xs-6">
+                        <div class="post-media">
+                            <a href="@item.login_name">
+                                <img src="@item.logo" alt="" class="img-responsive">
+                            </a>
+                            <small>@item.display_name.FirstOrDefault()</small>
+                        </div>
+                        <!-- end media -->
+                    </div>
+                }
+            }
+            <div class="col-md-6 col-xs-6">
+                <div class="post-media">
+                    <a href="https://shorten.asia/D8fvX38T" target="_blank">
+                        <img src="https://cf.shopee.vn/file/df4c3bdeb3a63e231b60ca805ad70e0b_tn" alt="" class="img-responsive">
+                    </a>
+                    <small>C&H Store</small>
+                </div>
+                <!-- end media -->
+            </div>
+        </div><!-- end row -->
+    </div><!-- end widget -->
+</div>

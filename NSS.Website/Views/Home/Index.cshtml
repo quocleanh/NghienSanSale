@@ -1,0 +1,154 @@
+﻿@using System.Text.RegularExpressions
+@using NSS.Website.Models;
+@{
+    /**/
+    ViewBag.Title = "Săn sale Shopee Lazada Tiki và hàng ngàn ưu đãi";
+    merchant_list merchant_list = ViewBag.merchant_list;
+    List<category> categories = ViewBag.Categorie;
+}
+<main>
+    <div class="hero_single jarallax" data-jarallax-video="https://youtu.be/aR4iSYB_nIY" style="background: #ededed url(/Content/UI/img/bg-meta.jpg) center center no-repeat; ">
+        <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-9 col-lg-10 col-md-8">
+                        <h1>20,000++ Mã Giảm Giá Toàn Sàn</h1>
+                        <p>Dán link sản phẩm để tìm kiếm mã giảm giá Shopee, Tiki...</p>
+                        <form method="get" action="/tim-ma-giam-gia">
+                            <div class="row g-0 custom-search-input"> 
+                                <div class="col-sm-9 col-lg-10">
+                                    <div class="form-group">
+                                        <input class="form-control no_border_r" name="url" type="text" placeholder="Nhập link sản phẩm để tìm khuyến mãi tốt nhất...">
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-lg-2">
+                                    <input type="submit" value="Search">
+                                </div>
+                            </div>
+                            <!-- /row -->
+                        </form>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+        </div>
+    </div>
+    <!-- /Background YouTube Parallax -->
+    <div class="bg_gray">
+        <div class="container margin_60_40">
+            <div class="main_title center">
+                <span><em></em></span>
+                <h2>Tìm mã theo Sàn</h2>
+                <p>Tổng hợp mã giảm giá mới nhất theo sàn TMDT</p>
+            </div>
+            <!-- /main_title -->
+            <div class="owl-carousel owl-theme categories_carousel">
+                <div class="item">
+                    <a href="/ma-giam-gia/Shopee">
+                        <img src="~/Content/uploads/brand/shopee.png" alt="" class="img-responsive">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="/ma-giam-gia/Lazada">
+                        <img src="~/Content/uploads/brand/lazada.png" alt="" class="img-responsive">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="/ma-giam-gia/Tiki">
+                        <img src="~/Content/uploads/brand/tiki.png" alt="" class="img-responsive">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="/ma-giam-gia/Sendo">
+                        <img src="~/Content/uploads/brand/sendo.png" alt="" class="img-responsive">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="/ma-giam-gia/Grab">
+                        <img src="~/Content/uploads/brand/grab.png" alt="" class="img-responsive">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="/ma-giam-gia/Fahasa">
+                        <img src="~/Content/uploads/brand/fahasa.png" alt="" class="img-responsive">
+                    </a>
+                </div>
+            </div>
+            <!-- /carousel -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /bg_gray -->
+    @Html.Partial("~/Views/Shared/Partial/_Categories.cshtml", categories)
+    <div class="container margin_60_40">
+        <div class="main_title version_2">
+            <span><em></em></span>
+            <h2>Giới thiệu về Nghiện Săn Sale</h2>
+            <p>NghienSanSale.vn</p>
+        </div>
+        <div class="list_articles add_bottom_25 clearfix">
+            <div class="content-widgets frontpage-after-main">
+                <aside id="text-3" class="widget widget_text">
+                    <p>NghienSanSale.vn l&agrave; nơi san sớt miễn tổn ph&iacute; c&aacute;c m&atilde; giảm gi&aacute;, th&ocirc;ng tin khuyến m&atilde;i, voucher khuyến m&atilde;i từ những trang thương mại điện tử, dịch vụ lớn ở Việt Nam. Ch&uacute;ng t&ocirc;i lu&ocirc;n nỗ lực c&oacute; đến cho bạn c&aacute;c th&ocirc;ng b&aacute;o khuyến m&atilde;i, m&atilde; giảm gi&aacute; tốt nhất tr&ecirc;n thị trường. Những b&agrave;i đ&aacute;nh gi&aacute;, kinh nghiệm tậu tậu hữu dụng nhất từ trải nghiệm c&aacute; nh&acirc;n tới hầu hết người.</p>
+                    <p>Bạn sẽ dễ d&agrave;ng sắm thấy c&aacute;c m&atilde; giảm gi&aacute; chất lượng, c&ograve;n sử dụng được tại website của ch&uacute;ng t&ocirc;i. Dữ liệu của ch&uacute;ng t&ocirc;i được cập nhật da dạng từ c&aacute;c Website thương mại điện tử to như m&atilde; giảm gi&aacute; Shopee, m&atilde; giảm gi&aacute; Lazada, m&atilde; giảm gi&aacute; Adayroi, m&atilde; giảm gi&aacute; Tiki&hellip; C&aacute;c chương tr&igrave;nh khuyến m&atilde;i giảm gi&aacute; lớn tại FPT Shop, Nguyễn Kim, Vietravel&hellip;.</p>
+                    <p>Tất cả những m&atilde; giảm gi&aacute;, khuyến m&atilde;i đều được ch&uacute;ng t&ocirc;i kiểm tra, d&ugrave;ng thử trước l&uacute;c đăng tải. D&ugrave; vậy vẫn mang 1 số &iacute;t m&atilde; giảm gi&aacute;, chương tr&igrave;nh khuyến m&atilde;i với thể hết hiệu lực sớm hơn dự định do hết lượt sử dụng. Nếu bạn v&ocirc; t&igrave;nh ph&aacute;t hiện ra c&aacute;c m&atilde; giảm gi&aacute;, khuyến m&atilde;i kh&ocirc;ng c&ograve;n d&ugrave;ng được. H&atilde;y gi&uacute;p ch&uacute;ng t&ocirc;i ph&aacute;t hiện bằng việc đ&aacute;nh gi&aacute; hoặc để lại comment. Để ch&uacute;ng t&ocirc;i với thể cập nhật những th&ocirc;ng tin mới hơn. Nếu bạn với những ưu đ&atilde;i hay, khuyến m&atilde;i hấp dẫn, h&atilde;y chia sẻ với ch&uacute;ng t&ocirc;i nh&eacute;. Ch&uacute;ng t&ocirc;i sẽ đăng vận chuyển để hầu hết người c&ugrave;ng biết v&agrave; sử dụng.</p>
+                    <p>LƯU &Yacute;: NghienSanSale (https://NghienSanSale.vn/) chỉ chia sẻ th&ocirc;ng tin khuyến m&atilde;i, m&atilde; giảm gi&aacute;, coupon, voucher.&nbsp;NghienSanSale ko b&aacute;n h&agrave;ng v&agrave; kh&ocirc;ng thuộc bất kỳ một tổ chức, si&ecirc;u thị thương mại điện tử n&agrave;o. NghienSanSale kh&ocirc;ng tự tạo ra m&atilde; giảm gi&aacute;, tạo ra khuyến m&atilde;i. NghienSanSale kiếm t&igrave;m th&ocirc;ng b&aacute;o khuyến m&atilde;i, m&atilde; giảm gi&aacute; tr&ecirc;n những trang thương mại điện tử, sau đ&oacute; tổng hợp v&agrave; đăng tải. Gi&uacute;p c&aacute;c bạn sắm t&igrave;m tằn tiện thời gian v&agrave; tiền bạc.</p>
+                    <p>
+                        L&agrave;m sao để c&oacute; m&atilde; giảm gi&aacute; tại NghienSanSale.VN?<br />
+                        Tất cả c&aacute;c m&atilde; giảm gi&aacute;, khuyến m&atilde;i đều được ch&uacute;ng t&ocirc;i đăng chuy&ecirc;n chở c&ocirc;ng khai v&agrave; miễn ph&iacute;. Bạn sở hữu thể kiếm t&igrave;m theo nh&agrave; cung cấp (Shopee, Lazada, Tiki, Adayroi,&hellip;) hoặc chọn theo chuy&ecirc;n mục mặt h&agrave;ng bạn muốn tậu th&ocirc;ng tin. Để thuận tiện, bạn sở hữu thể đăng k&yacute; trương mục v&agrave; lưu lại những chuy&ecirc;n mục hay những nh&agrave; chế tạo dịch vụ m&agrave; bạn y&ecirc;u th&iacute;ch.
+                    </p>
+                    <p>
+                        M&atilde; giảm gi&aacute;, Coupon, Voucher, khuyến m&atilde;i sở hữu đ&iacute;ch thực miễn tổn ph&iacute; hay kh&ocirc;ng, với mất g&igrave; kh&ocirc;ng?<br />
+                        NghienSanSale.VN l&agrave; website san sẻ v&igrave; cộng đồng. Bạn được ti&ecirc;u d&ugrave;ng miễn tổn ph&iacute; tất cả dịch vụ tại NghienSanSale.vn. Ch&uacute;ng t&ocirc;i cung ứng những t&iacute;nh năng để bạn sở hữu thể đăng k&yacute; t&agrave;i khoản, xem m&atilde; giảm gi&aacute;, kiếm t&igrave;m m&atilde; giảm gi&aacute;, lưu m&atilde; giảm gi&aacute; y&ecirc;u t&iacute;ch. Chia sẻ mang bạn b&egrave; c&aacute;c khuyến m&atilde;i, m&atilde; giảm gi&aacute;, coupon, ưu đ&atilde;i&hellip;
+                    </p>
+                    <p>Bạn sẽ ko n&ecirc;n trả bất kỳ khoản ph&iacute; tổn n&agrave;o khi t&igrave;m kiếm v&agrave; d&ugrave;ng c&aacute;c dịch vụ tại NghienSanSale.vn. H&atilde;y tận hưởng những trải nghiệm mua t&igrave;m online h&agrave; tiện thời k&igrave; v&agrave; tiền bạc hơn.</p>
+                    <p>NghienSanSale.VN &ndash; Gi&uacute;p bạn tổng hợp m&atilde; giảm gi&aacute;, coupon, voucher, khuyến m&atilde;i khi t&igrave;m h&agrave;ng tr&ecirc;n mạng</p>
+                </aside>
+            </div>
+        </div>
+        <!-- /list_articles -->
+    </div>
+    @*<div class="call_section lazy footer-c" data-bg="url(https://s3.ap-southeast-1.amazonaws.com/adpia.vn/util/multi/20221221/1218_YES_DEC_AFF_1200_x_200.jpg)">
+            <div class="container clearfix">
+                <div class="col-lg-5 col-md-6 float-end wow">
+                    <a href="https://click.adpia.vn/tracking.php?m=lazada&a=A100091693&u_id=&l=5555" class="footer-banner"></a>
+                </div>
+            </div>
+        </div>*@
+</main>
+@section Scripts {
+    <style>
+        .wrapper.d-flex.align-items-center.opacity-mask a {
+            position: absolute;
+            top: 0;
+            BOTTOM: 0;
+            LEFT: 0;
+            RIGHT: 0;
+        }
+        .footer-c.lazy {
+            position: relative;
+            background-size: contain;
+        }
+        a.footer-banner {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .owl-theme.categories_carousel .item a {
+            background-color: #fff;
+            padding: 33px 20px;
+            text-align: center;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            border-radius: 3px;
+            position: relative;
+            margin-bottom: 25px;
+        }
+    </style>
+    <script src="~/Content/js/home.js"></script>
+    <link href="~/Content/UI/css/help.css" rel="stylesheet" />
+}

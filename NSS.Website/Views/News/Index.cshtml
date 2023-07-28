@@ -1,0 +1,148 @@
+﻿@using NSS.Website.Models
+@using System.Globalization;
+@using System.Security.Claims;
+@model IEnumerable<News>
+@{
+    List<NewsCategory> newsCategories = ViewBag.NewsCategory;
+}
+<main>
+    <div class="page_header element_to_stick">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7 col-md-7 d-none d-md-block">
+                    <div class="breadcrumbs blog">
+                        <ul>
+                            <li><a href="/">Trang chủ</a></li>
+                            <li>>Blog săn sale</li>
+                        </ul>
+                    </div>
+                </div>
+                @Html.Partial("~/Views/Search/Index.cshtml")
+            </div>
+            <!-- /row -->
+        </div>
+    </div>
+    <!-- /page_header -->
+
+    <div class="container margin_30_40">
+        <div class="row">
+            <div class="col-lg-9">
+                @if (Model != null)
+                {
+                    <div class="row">
+                        @foreach (var item in Model.OrderByDescending(x => x.ID))
+                        {
+                            <div class="col-md-6">
+                                <article class="blog">
+                                    <figure>
+                                        <a href="/blog-khuyen-mai/@item.CategoryLink/@item.Slug">
+                                            <img src="@item.Images" class="img-responsive" style="width:100%" alt="">
+                                            <div class="preview"><span>Read more</span></div>
+                                        </a>
+                                    </figure>
+                                    <div class="post_info">
+                                        <small>@item.CategoryName</small>
+                                        <h2><a href="/blog-khuyen-mai/@item.CategoryLink/@item.Slug">@item.Title</a></h2>
+                                        <p> @item.Description</p>
+
+                                    </div>
+                                </article>
+                                <!-- /article -->
+                            </div>
+                        }
+                    </div>
+                    <!-- /row -->
+
+                    @*<div class="pagination_fg">
+                            <a href="#">«</a>
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">»</a>
+                        </div>*@
+                }
+            </div>
+            <!-- /col -->
+
+            <aside class="col-lg-3">
+                @*<div class="widget">
+                        <div class="widget-title first">
+                            <h4>Latest Post</h4>
+                        </div>
+                        <ul class="comments-list">
+                            <li>
+                                <div class="alignleft">
+                                    <a href="#0"><img src="img/blog-5.jpg" alt=""></a>
+                                </div>
+                                <small>Category - 11.08.2016</small>
+                                <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                            </li>
+                            <li>
+                                <div class="alignleft">
+                                    <a href="#0"><img src="img/blog-6.jpg" alt=""></a>
+                                </div>
+                                <small>Category - 11.08.2016</small>
+                                <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                            </li>
+                            <li>
+                                <div class="alignleft">
+                                    <a href="#0"><img src="img/blog-4.jpg" alt=""></a>
+                                </div>
+                                <small>Category - 11.08.2016</small>
+                                <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                            </li>
+                        </ul>
+                    </div>*@
+                <!-- /widget -->
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Categories</h4>
+                    </div>
+                    @if (newsCategories != null && newsCategories.Count > 1)
+                    {
+                        <ul class="cats">
+                            @foreach (var item in newsCategories)
+                            {
+                                <li><a href="/blog-khuyen-mai/@item.Link">@item.CategoryName @*<span>(12)</span>*@</a></li>
+                            }
+                        </ul>
+
+                    }
+
+                </div>
+                <!-- /widget -->
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Popular Tags</h4>
+                    </div>
+                    <div class="tags">
+                        <a href="#">Nghiên săn sale</a>
+                        <a href="#">Săn sale Shopee</a>
+                        <a href="#">Mã giảm giá Shopee</a>
+                        <a href="#">Mã freeship Shopee</a>
+                        <a href="#">Săn sale Lazada</a>
+                        <a href="#">Mgg shopee</a>
+                        <a href="#">Blog săn sale</a>
+                    </div>
+                </div>
+                <!-- /widget -->
+            </aside>
+            <!-- /aside -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+</main>
+
+
+@section Scripts {
+    <style>
+    </style>
+
+    <!-- SPECIFIC CSS -->
+    <link href="~/Content/UI/css/blog.css" rel="stylesheet" />
+}
+

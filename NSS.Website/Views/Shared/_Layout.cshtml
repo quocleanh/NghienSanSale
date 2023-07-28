@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- SITE META -->
+    <title>@ViewBag.SeoTitle | Nghiện Săn Sale</title>
+    <meta name="description" content="@ViewBag.SeoDescription">
+    <meta name="author" content="nghiensansale.vn">
+    <meta name="keywords" content="mã giảm giá, shopee, mã shopee, mã freeship shopee, mã giảm giá, mã lazada, voucher lazada">
+    <!-- META FOR FACEBOOK -->
+    <meta property="og:site_name" content="Nghiện Săn Sale" />
+    <meta property="og:rich_attachment" content="true" />
+    <meta property="og:type" content="article" />
+    <meta property="fb:app_id" content="553273006657828" /> 
+    <meta property="article:publisher" content="https://www.facebook.com/nghiensansalechamvn/" /> 
+    <meta property="og:image" itemprop="thumbnailUrl" content="@ViewBag.SeoImage" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="354" />
+    <meta property="og:image:alt " content="@ViewBag.SeoTitle | Nghiện Săn Sale" />
+    <meta property="og:title" itemprop="headline" content="@ViewBag.SeoTitle" />
+    <meta property="og:description" itemprop="description" content="@ViewBag.SeoDescription" />
+    <meta property="article:tag" content="@ViewBag.SeoTag" />
+    <meta property="og:image" content="@ViewBag.SeoImage">
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="~/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/Content/images/apple-icon//apple-touch-icon-iphone-60x60.png">
+    <link rel="apple-touch-icon" sizes="~/Content/images/apple-icon/" href="somedir/apple-touch-icon-ipad-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Content/images/apple-icon//apple-touch-icon-iphone-retina-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/Content/images/apple-icon//apple-touch-icon-ipad-retina-152x152.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="preload" href="~/Content/UI/fonts/fonts.googleapis.com/css.css" as="fetch" crossorigin="anonymous">
+
+    <!-- BASE CSS -->
+    <link href="~/Content/UI/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/UI/css/style.css" rel="stylesheet">
+    <!-- SPECIFIC CSS -->
+    <link href="~/Content/UI/css/home.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8ea1b169d5.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var __atsmarttag = {
+            pub_id: '5744706704859499028',
+            utm_source: '',
+            utm_medium: '',
+            utm_campaign: '',
+            utm_content: '',
+            new_tab: 0
+        };
+        (function () {
+            var script = document.createElement('script');
+            script.src = '//static.accesstrade.vn/js/atsmarttag.min.js?v=1.1.0';
+            script.type = 'text/javascript';
+            script.async = true;
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        })();
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-18QYNLY2EB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-18QYNLY2EB');
+    </script>
+    <script src="https://www.googleoptimize.com/optimize.js?id=GTM-P2WV2L6"></script>
+    
+</head>
+<body>
+    @Html.Partial("~/Views/Shared/_Header.cshtml")
+    @RenderBody()
+    @Html.Partial("~/Views/Shared/_Footer.cshtml")
+    <div id="toTop"></div><!-- Back to top button -->
+    <div class="layer"></div><!-- Opacity Mask Menu Mobile -->
+    <!-- Sign In Modal -->
+    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+        <div class="modal_header">
+            <h3>Sign In</h3>
+        </div>
+        <form>
+            <div class="sign-in-wrapper">
+                <a href="" class="social_bt facebook">Login with Facebook</a>
+                <a href="" class="social_bt google">Login with Google</a>
+                <div class="divider"><span>Or</span></div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" id="email">
+                    <i class="icon_mail_alt"></i>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" id="password" value="">
+                    <i class="icon_lock_alt"></i>
+                </div>
+                <div class="clearfix add_bottom_15">
+                    <div class="checkboxes float-start">
+                        <label class="container_check">
+                            Remember me
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="float-end"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Log In" class="btn_1 full-width mb_5">
+                    Don’t have an account? <a href="">Sign up</a>
+                </div>
+                <div id="forgot_pw">
+                    <div class="form-group">
+                        <label>Please confirm login email below</label>
+                        <input type="email" class="form-control" name="email_forgot" id="email_forgot">
+                        <i class="icon_mail_alt"></i>
+                    </div>
+                    <p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
+                    <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+                </div>
+            </div>
+        </form>
+        <!--form -->
+    </div>
+    <!-- /Sign In Modal -->
+    <!-- COMMON SCRIPTS -->
+    <script src="~/Content/UI/js/common_scripts.min.js"></script>
+    <script src="~/Content/UI/js/common_func.js"></script>
+    <script src="~/Content/UI/assets/validate.js"></script>
+    <!-- SPECIFIC SCRIPTS -->
+    <script src="~/Content/UI/js/jarallax.min.js"></script>
+    <script src="~/Content/UI/js/jarallax-video.min.js"></script>
+    <script src="~/Content/js/jquery.bootpag.min.js"></script>
+    @RenderSection("Scripts", required: false)
+    <script src="~/Content/js/common.js"></script>
+    <script src="~/Content/js/custom.js?v=@DateTime.Now.Ticks"></script>
+    <link href="~/Content/lib/jquery-toast-plugin-master/src/jquery.toast.css" rel="stylesheet" />
+    <script src="~/Content/lib/jquery-toast-plugin-master/src/jquery.toast.js"></script>
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+</body>
+</html>

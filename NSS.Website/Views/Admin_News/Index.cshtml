@@ -1,0 +1,64 @@
+﻿@model IEnumerable<NSS.Website.Models.News>
+<div class="parallax first-section" data-stellar-background-ratio="0.5"
+     style="background-image: url('https://pbs.twimg.com/media/DU1YyqPU0AAw2LS.jpg');background-position: 0 -135px;">
+    <div class="container">
+        <div class="section-title m30 text-center">
+            <h1>18+ Zone</h1>
+            <p>  . </p>
+        </div><!-- end title -->
+    </div><!-- end container -->
+</div>
+<div class="section wb">
+    <div class="container">
+        <div class="row">
+            <div class="content col-md-12">
+                <div class="post-wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="widget clearfix">
+                                <div class="widget-title">
+                                    <h3><span>@Html.ActionLink("Create New", "Create")</span></h3>
+                                </div><!-- end title -->
+
+                                
+                                <table class="table">
+                                    <tr>
+                                        
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Title)
+                                        </th> 
+                                        <th></th>
+                                    </tr>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Title)
+                                            </td>
+                                            
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </table>
+
+                            </div><!-- end about-widget -->
+                        </div><!-- end col -->
+                        <!-- end col -->
+                    </div><!-- end row -->
+
+                    <hr class="invis">
+
+
+
+                </div><!-- end coupon-wrapper -->
+            </div><!-- end content -->
+        </div><!-- end row -->
+    </div>
+</div>

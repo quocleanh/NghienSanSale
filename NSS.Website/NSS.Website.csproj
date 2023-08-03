@@ -447,8 +447,8 @@
     <Content Include="Content\lib\jquery-toast-plugin-master\bower.json" />
     <Content Include="Content\lib\jquery-toast-plugin-master\package.json" />
     <Content Include="Content\lib\jquery-toast-plugin-master\README.md" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\nghiensansale - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\nghiensansale - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

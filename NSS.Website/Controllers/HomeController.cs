@@ -1,11 +1,9 @@
 ﻿using Newtonsoft.Json;
 using NSS.Website.Bussiniess;
 using NSS.Website.Models;
-using NSS.Wesite.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -28,7 +26,7 @@ namespace NSS.Website.Controllers
             try
             {
                 Coupons coupon;
-                var client = new RestClient(api_endpoint + "offers_informations/coupon?limit=20")
+                var client = new RestClient(api_endpoint + "offers_informations/coupon?limit=10")
                 {
                     Timeout = -1
                 };

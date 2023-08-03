@@ -40,28 +40,28 @@
                         string title = Regex.Replace(item.name, pattern, "xxxxx");
                         Coupon_Item coup = item.coupons.FirstOrDefault();
                         string code = item.coupons.FirstOrDefault().coupon_code;
-                        string img = "Content/images/logo-black.png";
+                        string img = "/Content/images/logo-black.png";
                         if (!string.IsNullOrEmpty(item.domain))
                         {
                             if (item.domain.ToString() == "shopee.vn")
                             {
-                                img = domain + "Content/uploads/brand/shopee.png";
+                                img = domain + "/Content/uploads/brand/shopee.png";
                             }
                             else if (item.domain.ToString() == "lazada.vn")
                             {
-                                img = domain + "Content/uploads/brand/lazada.png";
+                                img = domain + "/Content/uploads/brand/lazada.png";
                             }
                             else if (item.domain.ToString() == "tiki.vn")
                             {
-                                img = domain + "Content/uploads/brand/tiki.png";
+                                img = domain + "/Content/uploads/brand/tiki.png";
                             }
                             else if (item.domain.ToString() == "fahasa.com")
                             {
-                                img = domain + "Content/uploads/brand/fahasa.png";
+                                img = domain + "/Content/uploads/brand/fahasa.png";
                             }
                             else
                             {
-                                img = domain + "Content/images/logo-black.png";
+                                img = domain + "/Content/images/logo-black.png";
                             }
                         }
                         else
@@ -103,10 +103,10 @@
                 else if (strURL.Contains("tiki.vn"))
                 {
                     <div class=" row">
-						<iframe style='border:none; max-width: 100%; margin: 15px 0 25px 0;' src='https://smartlink.adpia.vn/adpia-ads.php?width=1240&height=413&cate=A&m_id=tiki&a_id=A100091693&u_id=' height='413' width='1240'></iframe>
-						<script>window.addEventListener('load', function (event) { if(document.getElementsByTagName('iframe')[0].offsetWidth < document.getElementsByTagName('iframe')[0].width) { document.getElementsByTagName('iframe')[0].style.height = (document.getElementsByTagName('iframe')[0].height * document.getElementsByTagName('iframe')[0].offsetWidth / document.getElementsByTagName('iframe')[0].width) + 'px' } })</script>
-						
-					</div>
+                        <iframe style='border:none; max-width: 100%; margin: 15px 0 25px 0;' src='https://smartlink.adpia.vn/adpia-ads.php?width=1240&height=413&cate=A&m_id=tiki&a_id=A100091693&u_id=' height='413' width='1240'></iframe>
+                        <script>window.addEventListener('load', function (event) { if (document.getElementsByTagName('iframe')[0].offsetWidth < document.getElementsByTagName('iframe')[0].width) { document.getElementsByTagName('iframe')[0].style.height = (document.getElementsByTagName('iframe')[0].height * document.getElementsByTagName('iframe')[0].offsetWidth / document.getElementsByTagName('iframe')[0].width) + 'px' } })</script>
+
+                    </div>
                 }
 
 
@@ -122,24 +122,24 @@
                         string title = Regex.Replace(item.name, pattern, "xxxxx");
                         Coupon_Item coup = item.coupons.FirstOrDefault();
                         string code = item.coupons.FirstOrDefault().coupon_code;
-                        string img = "Content/images/logo-black.png";
+                        string img = "/Content/images/logo-black.png";
                         if (!string.IsNullOrEmpty(item.domain))
                         {
                             if (item.domain.ToString() == "shopee.vn")
                             {
-                                img = domain + "Content/uploads/brand/shopee.png";
+                                img = domain + "/Content/uploads/brand/shopee.png";
                             }
                             else if (item.domain.ToString() == "lazada.vn")
                             {
-                                img = domain + "Content/uploads/brand/lazada.png";
+                                img = domain + "/Content/uploads/brand/lazada.png";
                             }
                             else if (item.domain.ToString() == "tiki.vn")
                             {
-                                img = domain + "Content/uploads/brand/tiki.png";
+                                img = domain + "/Content/uploads/brand/tiki.png";
                             }
                             else if (item.domain.ToString() == "fahasa.com")
                             {
-                                img = domain + "Content/uploads/brand/fahasa.png";
+                                img = domain + "/Content/uploads/brand/fahasa.png";
                             }
                         }
                         else
@@ -165,6 +165,7 @@
                                 <span class="show-code" id="@item.id" data-id="@item.id" data-code="@item.coupons.FirstOrDefault().coupon_code" data-ex-link="@item.aff_link" id="@item.coupons.FirstOrDefault().coupon_code">Copy Code</span>
                             </section>
                         </article>
+                         
                     }
                 </div>
 
@@ -175,8 +176,8 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
-         
+
         });
-        
+
     </script>
 }
